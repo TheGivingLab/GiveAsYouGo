@@ -9,7 +9,7 @@ class Home extends Panel
     super
 
     Main.bind('refresh change', @render)
-    @addButton('Log in', @login).addClass('right')
+    @addButton('Sign in', @login).addClass('right')
 
     @active @render
 
@@ -17,7 +17,7 @@ class Home extends Panel
     @html require('views/main/home')
 
   login: ->
-    alert 'Log in!'
+    @navigate('/signin', trans: 'left')
 
 class Main extends Spine.Controller
   constructor: ->
