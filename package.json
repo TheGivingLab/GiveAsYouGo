@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "serveup": "~0.0.5",
+    "coffee-script": "~1.4.0",
+    "haml-coffee": "*",
     "hem": "~0.1.8",
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",
