@@ -40,4 +40,18 @@ hem.compilers.jhaml = function(path) {
 
 require.extensions['.jhaml'] = require.extensions['.haml'];
 
+// http://blog.divshot.com/post/31336785156/exposing-env-to-spine
+hem.compilers.env = function(path) {
+  var content = fs.readFileSync(path, 'utf8');
+  var envHash = JSON.parse(content);
+
+  for (key in envHash) {
+    if (process.env[key]) {
+      envHash[key] = process.env[key];
+    }
+  }
+
+  return "module.exports = " + JSON.stringify(envHash);
+};
+
 hem.exec(argv[0]);
