@@ -6,7 +6,61 @@ env = require 'environment'
 # Require models
 User = require 'models/user'
 
+GivingLabHandler =
+  glauth: (data, action) ->
+    data.apikey = env.GIVINGLAB_API_KEY
+    @log 'auth', data
+    $.ajax
+      type: 'POST'
+      url: 'https://www.thegivinglab.org/api/users/' + action
+      data: data
+      dataType: 'jsonp'
+      error: (jqXHR, textStatus, errorThrown) =>
+        @log 'error:', jqXHR, status, error
+        @navigate '/error',
+          trans: 'right'
+          msg: "Failed to authenticate with The Giving Lab"
+          data:
+            status: status
+            jqXHR: jqXHR
+            error: error
+      success: (data, textStatus, jqXHR) =>
+        @log 'success:', data, textStatus, jqXHR
+        @navigate '/home', trans: 'left'
+
+FacebookHandler =
+  fbauth: (action) ->
+    FB.getLoginStatus (response) =>
+      if response.status == 'connected'
+        @log 'connected via FB', response
+        @glauth
+          FacebookToken: response.authResponse.accessToken
+        , 'authenticate'
+      else
+        @log 'not logged in via FB', response
+        FB.login (response) =>
+          if response.authResponse
+            @log 'authorized', response
+            if action == 'signin'
+              @glauth
+                FacebookToken: response.authResponse.accessToken
+              , 'authenticate'
+            else if action == 'signup'
+              @glauth
+                FacebookAccessToken: response.authResponse.accessToken
+              , 'createuser'
+          else
+            @log 'Authorization denied', response
+            @navigate '/error',
+              trans: 'right'
+              msg: "Authorization was denied"
+              data:
+                response: response
+        , { scope: 'email' }
+
 class UsersSignup extends Panel
+  @include GivingLabHandler
+  @include FacebookHandler
   title: 'Sign up'
   className: 'users signup'
   elements:
@@ -20,11 +74,11 @@ class UsersSignup extends Panel
   render: ->
     @html require('views/signup/form')()
   fbsignup: ->
-    @navigate '/fb', {trans: 'left', action: 'signup'}
+    @fbauth 'signup'
   signup: (e) ->
     e.preventDefault()
     @log @formData()
-    @auth @formData(), 'registeruser'
+    @glauth @formData(), 'registeruser'
     user = User.create(@formData())
     @navigate '/profile', trans: 'right' if user
   back: ->
@@ -38,28 +92,9 @@ class UsersSignup extends Panel
       Password: @form.find('[name=Password]').val()
     }
 
-  auth: (data, action) ->
-    data.apikey = env.GIVINGLAB_API_KEY
-    @log 'auth', data
-    $.ajax
-      type: 'POST'
-      url: 'https://www.thegivinglab.org/api/users/' + action
-      data: data
-      dataType: 'jsonp'
-      error: (jqXHR, textStatus, errorThrown) =>
-        @log 'error:', jqXHR, status, error
-        @navigate '/error',
-          trans: 'right'
-          msg: "Failed to create an account with The Giving Lab"
-          data:
-            status: status
-            jqXHR: jqXHR
-            error: error
-      success: (data, textStatus, jqXHR) =>
-        @log 'success:', data, textStatus, jqXHR
-        @navigate '/home', trans: 'left'
-
 class UsersSignin extends Panel
+  @include GivingLabHandler
+  @include FacebookHandler
   title: 'Sign in'
   className: 'users signin'
   events:
@@ -74,37 +109,16 @@ class UsersSignin extends Panel
   render: ->
     @html require('views/signin/form')()
   fbsignin: ->
-    @navigate '/fb', {trans: 'left', action: 'signin'}
+    @fbauth 'signin'
   signin: (e) ->
     e.preventDefault()
     @log @formData()
-    @auth @formData()
+    @glauth @formData(), 'authenticate'
   formData: ->
     {
       Username: @form.find('[name=Email]').val()
       Password: @form.find('[name=Password]').val()
     }
-
-  auth: (data) ->
-    data.apikey = env.GIVINGLAB_API_KEY
-    @log 'auth', data
-    $.ajax
-      type: 'POST'
-      url: 'https://www.thegivinglab.org/api/users/authenticate'
-      data: data
-      dataType: 'jsonp'
-      error: (jqXHR, textStatus, errorThrown) =>
-        @log 'error:', jqXHR, status, error
-        @navigate '/error',
-          trans: 'right'
-          msg: "Failed to authenticate with The Giving Lab"
-          data:
-            status: status
-            jqXHR: jqXHR
-            error: error
-      success: (data, status, jqXHR) =>
-        @log 'success:', data, status, jqXHR
-        @navigate '/home', trans: 'left'
 
 class Users extends Spine.Controller
   constructor: ->
@@ -116,35 +130,7 @@ class Users extends Spine.Controller
     @routes
       '/signup': (params) -> @signup.active(params)
       '/signin': (params) -> @signin.active(params)
-      '/fb': (params) -> @fb(params)
     # Fetch from local storage
     User.fetch()
-
-  fb: (params) ->
-    FB.getLoginStatus (response) =>
-      if response.status == 'connected'
-        @log 'connected via FB', response
-        @signin.auth
-          FacebookToken: response.authResponse.accessToken
-      else
-        @log 'not logged in via FB', response
-        FB.login (response) =>
-          if response.authResponse
-            @log 'authorized', response
-            if params.action == 'signin'
-              @signin.auth
-                FacebookToken: response.authResponse.accessToken
-            else if params.action == 'signup'
-              @signup.auth
-                FacebookAccessToken: response.authResponse.accessToken
-              , 'createuser'
-          else
-            @log 'Authorization denied', response
-            @navigate '/error',
-              trans: 'right'
-              msg: "Authorization was denied"
-              data:
-                response: response
-        , { scope: 'email' }
 
 module.exports = Users
