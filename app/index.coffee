@@ -12,7 +12,7 @@ class App extends Stage.Global
 
     # Instantiate Users controller
     new Users
-    Spine.Route.setup(shim:true)
+    Spine.Route.setup()
     @navigate '/home'
 
 module.exports = App
