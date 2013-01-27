@@ -19,18 +19,43 @@ class UsersSignup extends Panel
     @bind 'active', @render()
   render: ->
     @html require('views/signup/form')()
-  signup: ->
+  signup: (e) ->
+    e.preventDefault()
+    @log @formData()
+    @auth @formData(), 'registeruser'
     user = User.create(@formData())
-    @navigate('/profile', trans: 'right') if user
+    @navigate '/profile', trans: 'right' if user
   back: ->
     @form.blur()
-    @navigate('/signin', trans: 'left')
+    @navigate '/signin', trans: 'left'
   formData: ->
-    Forename = @form.find('[name=Forename]').val()
-    Surname = @form.find('[name=Surname]').val()
-    Email = @form.find('[name=Email]').val()
-    Password = @form.find('[name=Password]').val()
-    {Forename: Forename, Surname: Surname, Email: Email, Password: Password}
+    {
+      Forename: @form.find('[name=Forename]').val()
+      Surname: @form.find('[name=Surname]').val()
+      Email: @form.find('[name=Email]').val()
+      Password: @form.find('[name=Password]').val()
+    }
+
+  auth: (data, action) ->
+    data.apikey = env.GIVINGLAB_API_KEY
+    @log 'auth', data
+    $.ajax
+      type: 'POST'
+      url: 'https://www.thegivinglab.org/api/users/' + action
+      data: data
+      dataType: 'jsonp'
+      error: (jqXHR, textStatus, errorThrown) =>
+        @log 'error:', jqXHR, status, error
+        @navigate '/error',
+          trans: 'right'
+          msg: "Failed to create an account with The Giving Lab"
+          data:
+            status: status
+            jqXHR: jqXHR
+            error: error
+      success: (data, textStatus, jqXHR) =>
+        @log 'success:', data, textStatus, jqXHR
+        @navigate '/home', trans: 'left'
 
 class UsersSignin extends Panel
   title: 'Sign in'
