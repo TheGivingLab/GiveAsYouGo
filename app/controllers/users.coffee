@@ -13,12 +13,14 @@ class UsersSignup extends Panel
     'form': 'form'
   constructor: ->
     super
-    @addButton('< Back', @back)
+    @addButton('Sign up via facebook', @fbsignup)
     @addButton('Sign up', @signup).addClass('right')
     # Render the view, resetting the form
     @bind 'active', @render()
   render: ->
     @html require('views/signup/form')()
+  fbsignup: ->
+    @navigate '/fb', {trans: 'left', action: 'signup'}
   signup: (e) ->
     e.preventDefault()
     @log @formData()
@@ -72,7 +74,7 @@ class UsersSignin extends Panel
   render: ->
     @html require('views/signin/form')()
   fbsignin: ->
-    @navigate '/fbsignin', trans: 'left'
+    @navigate '/fb', {trans: 'left', action: 'signin'}
   signin: (e) ->
     e.preventDefault()
     @log @formData()
@@ -114,11 +116,11 @@ class Users extends Spine.Controller
     @routes
       '/signup': (params) -> @signup.active(params)
       '/signin': (params) -> @signin.active(params)
-      '/fbsignin': (params) -> @fbsignin(params)
+      '/fb': (params) -> @fb(params)
     # Fetch from local storage
     User.fetch()
 
-  fbsignin: ->
+  fb: (params) ->
     FB.getLoginStatus (response) =>
       if response.status == 'connected'
         @log 'connected via FB', response
@@ -129,8 +131,13 @@ class Users extends Spine.Controller
         FB.login (response) =>
           if response.authResponse
             @log 'authorized', response
-            @signin.auth
-              FacebookToken: response.authResponse.accessToken
+            if params.action == 'signin'
+              @signin.auth
+                FacebookToken: response.authResponse.accessToken
+            else if params.action == 'signup'
+              @signup.auth
+                FacebookAccessToken: response.authResponse.accessToken
+              , 'createuser'
           else
             @log 'Authorization denied', response
             @navigate '/error',
