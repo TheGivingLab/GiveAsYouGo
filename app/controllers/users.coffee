@@ -26,7 +26,16 @@ GivingLabHandler =
             error: error
       success: (data, textStatus, jqXHR) =>
         @log 'success:', data, textStatus, jqXHR
-        @navigate '/home', trans: 'left'
+        user = User.findByAttribute(ID: data.ID)?.updateAttributes(data) or User.create(data)
+        if user
+          Users.signin user
+          @navigate '/profile', trans: 'right'
+        else
+          @navigate '/error',
+            trans: 'right'
+            msg: "Failed to create a User"
+            data:
+              user: data
 
 FacebookHandler =
   fbauth: (action) ->
@@ -79,8 +88,6 @@ class UsersSignup extends Panel
     e.preventDefault()
     @log @formData()
     @glauth @formData(), 'registeruser'
-    user = User.create(@formData())
-    @navigate '/profile', trans: 'right' if user
   back: ->
     @form.blur()
     @navigate '/signin', trans: 'left'
@@ -120,17 +127,48 @@ class UsersSignin extends Panel
       Password: @form.find('[name=Password]').val()
     }
 
-class Users extends Spine.Controller
+class UserProfile extends Panel
+  title: 'Your profile'
   constructor: ->
     super
+    @addButton('Home', @home)
+    @addButton('Sign out', @signout).addClass('right')
+    @active (params) -> @render(params)
+  render: (params)->
+    @html require('views/user/profile')(params.user or Users.user)
+  home: ->
+    @navigate '/home', trans: 'left'
+  signout: ->
+    Users.signout()
+    @navigate '/home', trans: 'right'
+
+class Users extends Spine.Controller
+  @toggleBtns: ->
+    hidden = $('button.hidden')
+    visible = $('button.visible')
+    console.log 'hidden', hidden, 'visible', visible
+    hidden.removeClass('hidden').addClass('visible')
+    visible.removeClass('visible').addClass('hidden')
+  @signin: (user) ->
+    console.log 'signin', user
+    @toggleBtns()
+    @user = user
+  @singout: () ->
+    console.log 'signout', @user
+    @toggleBtns()
+    @user = null
+  constructor: ->
+    super
+    # Fetch from local storage
+    User.fetch()
     # The panels
     @signup = new UsersSignup
     @signin = new UsersSignin
+    @profile = new UserProfile
     # Routing
     @routes
       '/signup': (params) -> @signup.active(params)
       '/signin': (params) -> @signin.active(params)
-    # Fetch from local storage
-    User.fetch()
+      '/profile': (params) -> @profile.active(params)
 
 module.exports = Users

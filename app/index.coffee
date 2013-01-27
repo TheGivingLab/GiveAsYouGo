@@ -9,9 +9,9 @@ class App extends Stage.Global
   constructor: ->
     super
     @main = new Main
+    @users = new Users
 
     # Instantiate Users controller
-    new Users
     Spine.Route.setup()
     @navigate '/home'
 

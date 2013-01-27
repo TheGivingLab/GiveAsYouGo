@@ -1,0 +1,8 @@
+%img{:src => @ProfilePictureUrl}
+%ul
+  %li
+    %strong Name:
+    =[@Forename, @Surname].join ' '
+  %li
+    %strong Email address:
+    =@EmailAddress

@@ -1,5 +1,6 @@
 Spine = require('spine')
 {Panel} = require('spine.mobile')
+Users = require('controllers/users')
 
 class Error extends Panel
   title: 'Oops - something when wrong'
@@ -23,14 +24,22 @@ class Home extends Panel
   constructor: ->
     super
 
-    Main.bind('refresh change', @render)
-    @addButton('Sign up', @signup)
-    @addButton('Sign in', @signin).addClass('right')
+    @addButton('My profile', @profile).addClass('hidden home')
+    @addButton('Sign out', @signout).addClass('right hidden home')
+    @addButton('Sign up', @signup).addClass('visible home')
+    @addButton('Sign in', @signin).addClass('right visible home')
 
     @active @render
 
   render: =>
     @html require('views/main/home')
+
+  profile: ->
+    @navigate('/profile', trans: 'left')
+
+  signout: ->
+    Users.signout()
+    @navigate('/home', trans: 'right')
 
   signup: ->
     @navigate('/signup', trans: 'left')
