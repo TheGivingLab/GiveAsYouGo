@@ -67,11 +67,16 @@ class UsersSignin extends Panel
       data: data
       dataType: 'jsonp'
       error: (jqXHR, textStatus, errorThrown) =>
-        @log 'error:', jqXHR, textStatus, errorThrown
-      success: (data, textStatus, jqXHR) =>
-        @log 'success:', data, textStatus, jqXHR
-      complete: (jqXHR, textStatus) =>
-        @log 'complete:', textStatus, jqXHR
+        @log 'error:', jqXHR, status, error
+        @navigate '/error',
+          trans: 'right'
+          msg: "Failed to authenticate with The Giving Lab"
+          data:
+            status: status
+            jqXHR: jqXHR
+            error: error
+      success: (data, status, jqXHR) =>
+        @log 'success:', data, status, jqXHR
         @navigate '/home', trans: 'left'
 
 class Users extends Spine.Controller
@@ -103,7 +108,11 @@ class Users extends Spine.Controller
               FacebookToken: response.authResponse.accessToken
           else
             @log 'Authorization denied', response
-            @navigate '/signin', trans: 'right'
+            @navigate '/error',
+              trans: 'right'
+              msg: "Authorization was denied"
+              data:
+                response: response
         , { scope: 'email' }
 
 module.exports = Users
