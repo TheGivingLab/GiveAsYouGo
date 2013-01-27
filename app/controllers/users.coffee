@@ -1,8 +1,10 @@
-Spine = require('spine')
+Spine   = require('spine')
+$       = Spine.$
 {Panel} = require('spine.mobile')
+env = require 'environment'
 
 # Require models
-User = require('models/user')
+User = require 'models/user'
 
 class UsersSignup extends Panel
   title: 'Sign up'
@@ -39,19 +41,38 @@ class UsersSignin extends Panel
     'form': 'form'
   constructor: ->
     super
-    @addButton('Sign up', @signup)
+    @addButton('Sign in via facebook', @fbsignin)
     @addButton('Sign in', @signin).addClass('right')
     @active -> @render()
   render: ->
     @html require('views/signin/form')()
-  signup: ->
-    @navigate('/signup', trans: 'left')
-  signin: ->
-    @navigate('/profile', trans: 'right')
+  fbsignin: ->
+    @navigate '/fbsignin', trans: 'left'
+  signin: (e) ->
+    e.preventDefault()
+    @log @formData()
+    @auth @formData()
   formData: ->
-    Email = @form.find('[name=Email]').val()
-    Password = @form.find('[name=Password]').val()
-    {Email: Email, Password: Password}
+    {
+      Username: @form.find('[name=Email]').val()
+      Password: @form.find('[name=Password]').val()
+    }
+
+  auth: (data) ->
+    data.apikey = env.GIVINGLAB_API_KEY
+    @log 'auth', data
+    $.ajax
+      type: 'POST'
+      url: 'https://www.thegivinglab.org/api/users/authenticate'
+      data: data
+      dataType: 'jsonp'
+      error: (jqXHR, textStatus, errorThrown) =>
+        @log 'error:', jqXHR, textStatus, errorThrown
+      success: (data, textStatus, jqXHR) =>
+        @log 'success:', data, textStatus, jqXHR
+      complete: (jqXHR, textStatus) =>
+        @log 'complete:', textStatus, jqXHR
+        @navigate '/home', trans: 'left'
 
 class Users extends Spine.Controller
   constructor: ->
@@ -63,7 +84,26 @@ class Users extends Spine.Controller
     @routes
       '/signup': (params) -> @signup.active(params)
       '/signin': (params) -> @signin.active(params)
+      '/fbsignin': (params) -> @fbsignin(params)
     # Fetch from local storage
     User.fetch()
-    
+
+  fbsignin: ->
+    FB.getLoginStatus (response) =>
+      if response.status == 'connected'
+        @log 'connected via FB', response
+        @signin.auth
+          FacebookToken: response.authResponse.accessToken
+      else
+        @log 'not logged in via FB', response
+        FB.login (response) =>
+          if response.authResponse
+            @log 'authorized', response
+            @signin.auth
+              FacebookToken: response.authResponse.accessToken
+          else
+            @log 'Authorization denied', response
+            @navigate '/signin', trans: 'right'
+        , { scope: 'email' }
+
 module.exports = Users

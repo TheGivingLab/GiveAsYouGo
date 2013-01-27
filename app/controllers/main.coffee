@@ -9,15 +9,19 @@ class Home extends Panel
     super
 
     Main.bind('refresh change', @render)
-    @addButton('Sign in', @login).addClass('right')
+    @addButton('Sign up', @signup)
+    @addButton('Sign in', @signin).addClass('right')
 
     @active @render
 
   render: =>
     @html require('views/main/home')
 
-  login: ->
-    @navigate('/signin', trans: 'left')
+  signup: ->
+    @navigate('/signup', trans: 'left')
+
+  signin: ->
+    @navigate('/signin', trans: 'right')
 
 class Main extends Spine.Controller
   constructor: ->
