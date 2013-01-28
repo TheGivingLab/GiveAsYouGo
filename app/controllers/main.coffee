@@ -14,7 +14,6 @@ class Error extends Panel
     @navigate '/home', trans: 'left'
 
   render: (params) =>
-    @log 'Error'
     @html require('views/main/error')(params)
 
 class Home extends Panel
@@ -31,7 +30,7 @@ class Home extends Panel
 
     @active @render
 
-  render: =>
+  render: ->
     @html require('views/main/home')
 
   profile: ->
