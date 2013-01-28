@@ -169,12 +169,10 @@ class Users extends Spine.Controller
   @signout: () ->
     console.log '[Users.signout] signout:', @user if env.DEBUG
     @toggleBtns()
-    @user = null
+    @user.destroy()
 
   constructor: ->
     super
-    # Fetch from local storage
-    User.fetch()
     # The panels
     @signup = new UserSignup
     @signin = new UserSignin
@@ -184,5 +182,8 @@ class Users extends Spine.Controller
       '/signup': (params) -> @signup.active(params)
       '/signin': (params) -> @signin.active(params)
       '/profile': (params) -> @profile.active(params)
+    # Fetch from local storage
+    User.fetch()
+    Users.signin User.first() if User.first()
 
 module.exports = Users
