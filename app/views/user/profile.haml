@@ -1,8 +1,33 @@
-%img{:src => @ProfilePictureUrl}
-%ul
-  %li
-    %strong Name:
-    =[@Forename, @Surname].join ' '
-  %li
-    %strong Email address:
-    =@EmailAddress
+%br/
+%center
+  #gl_plugin_0.gl_plugin.gl_profile{:style => "width: 300px;"}
+    .gl_box.gl_line.gl_header
+      .gl_avatar{:style => "background-image: url(#{@ProfilePictureUrl})"}
+        %div &nbsp;
+      .gl_details
+        %a.gl_blue{:href => "http://www.thegivinglab.org/users/#{@Tag}"}
+          = @Name()
+        %br/
+        %span Joined
+          = @MemberFor()
+    .gl_box.gl_line.gl_thirds.gl_h80
+      .gl_stat.gl_stat_given
+        %div &nbsp;
+        %span £
+          = @TotalRaised
+        %br/
+        raised
+      .gl_stat.gl_stat_events
+        %div &nbsp;
+        %span=@Events.length
+        %br/
+        fundraisers
+      .gl_stat.gl_stat_groupCount
+        %div &nbsp;
+        %span=@Groups.length
+        %br/
+        groups
+    .gl_box
+      .gl_innertitle Active Events
+    .gl_box
+      .gl_innertitle Past Events
