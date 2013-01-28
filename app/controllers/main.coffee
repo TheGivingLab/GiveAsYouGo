@@ -18,7 +18,7 @@ class Error extends Panel
 
 class Home extends Panel
   className: 'main home'
-  title: 'Powered by The GivingLab'
+  title: 'Give As You Go'
 
   constructor: ->
     super
