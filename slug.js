@@ -1,8 +1,10 @@
 var hem  = new (require('hem'));
 var HamlCoffee = require('haml-coffee/src/haml-coffee');
-var CoffeeScript = require('coffee-script')
+var CoffeeScript = require('coffee-script');
 var fs   = require('fs');
 var argv = process.argv.slice(2);
+var stylus = require('stylus');
+var dirname = require('path').dirname;
 
 hem.compilers.haml = function(path) {
   var compiler, content, template;
@@ -52,6 +54,21 @@ hem.compilers.env = function(path) {
   }
 
   return "module.exports = " + JSON.stringify(envHash);
+};
+
+hem.compilers.styl = function(path) {
+  var content = fs.readFileSync(path, 'utf8');
+  var result = '';
+  stylus(content)
+    .include(dirname(path))
+    .set('include css', true)
+    .render(function(err, css) {
+      if (err) {
+        throw err;
+      }
+      return result = css;
+    });
+  return result;
 };
 
 hem.exec(argv[0]);
