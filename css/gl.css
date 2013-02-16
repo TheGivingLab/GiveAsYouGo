@@ -1,0 +1,2697 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.gl_btn {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding: 4px 14px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  *line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border: 1px solid #d7dbe6;
+  *border: 0;
+  border-bottom-color: #b8bfd2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  text-decoration: none;
+}
+.gl_btn:hover,
+.gl_btn:active,
+.gl_btn.active,
+.gl_btn.disabled,
+.gl_btn[disabled] {
+  color: #333333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+.gl_btn:active,
+.gl_btn.active {
+  background-color: #cccccc \9;
+}
+.gl_btn:first-child {
+  *margin-left: 0;
+}
+.gl_btn:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  /* Buttons in IE7 don't get borders, so darken on hover */
+
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+.gl_btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.gl_btn.active,
+.gl_btn:active {
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+.gl_btn.disabled,
+.gl_btn[disabled] {
+  cursor: default;
+  background-color: #e6e6e6;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.gl_btn div {
+  float: left;
+  margin: 3px 5px 0 -5px;
+  width: 16px;
+  height: 14px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqJJREFUeNqcVU1oE1EQnp192SSbn001pLXRUiW21IIWWxFqwUQPasCfeO5BbRUVi61QKBRMe+iheBAvFsSfgN6reJZI8SJE6UWLUDBIL5UcYqEaJZv1TbKbZrfZ/n0weW9m3vexmXk/wqfubuAIcEty64IKstxGuOV1n/LD3E7W5CdpZJREQcj6RFGRBKGcLWoa/FLVREnTouQj4hsvYouzJr+iaZdVVT3CJEW5FSwUFIQ1OLm5uWCuWJwjf5co+phOruYB/Dmv9wHz+P3XsFAAK0gwyJjPmNfLNzQ19aEcCATBBmhDNsAkyYWu3t4c7BBiKFRAOR5/Lni9OxLwDwx8QEc4POMbG1vdNnl8HKS2tlH83NOTd8Vi/RTYDtkVj1/l3Gy5RnzymgJbEakhp8qFNBIUOJrJ0PTFytTUlsgmgc1E6pHXCdiJ2JHrClhF6MeOTBA0fjA2wBV9TNkt2ExgU7Abrw5tlKf7YZZbq34HJLjNW8+LgaiFHHA42Jx3t6PVH5KARvL1y2W9AHNgmg9pY8Ee5UCfK4A+FCv3AI3kU9wqUCbKDQzkgCOKAtKnXuoMn4jU3CGVgnGf4qYaEGntfAvgCTJF0fYNLeW/LdQrCo+bBHCo9xmQGTgTuQn3z779ce9UatFduZCqIJ/i1jaWv2AmM5i+2D4Kzb72Sd6ZCYoljt/+8+77U5ex+PT+wcLsx8duaxvf0+RJ/1caR7hfbdO5g3emg56W5JefaegMxeBY84VpLmCuy/WXHfX+KvX9Lu2D1sYOFmnsCi4uz+eyywtFfR880vdFXYEJRCEpyQjIEDRVg1JJ42+DAAJvZalYgn+/SxSjh2XCepgeOj3iMLfajzSvkESQZBH+rqpJbqb3BNr2Hj5vJtuD1tH6/wIMAON417QGWy6EAAAAAElFTkSuQmCC);
+}
+.btn-large {
+  padding: 9px 14px;
+  font-size: 16px;
+  line-height: normal;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.btn-large [class^="icon-"] {
+  margin-top: 2px;
+}
+.btn-small {
+  padding: 3px 9px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.btn-small [class^="icon-"] {
+  margin-top: 0;
+}
+.btn-mini {
+  padding: 2px 6px;
+  font-size: 11px;
+  line-height: 16px;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn {
+  border-color: #c5c5c5;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+}
+.btn-primary {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #006dcc;
+  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+  border-color: #0044cc #0044cc #002a80;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #0044cc;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: #ffffff;
+  background-color: #0044cc;
+  *background-color: #003bb3;
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #003399 \9;
+}
+.btn-warning {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #faa732;
+  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+  background-image: -o-linear-gradient(top, #fbb450, #f89406);
+  background-image: linear-gradient(to bottom, #fbb450, #f89406);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+  border-color: #f89406 #f89406 #ad6704;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #f89406;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning.active,
+.btn-warning.disabled,
+.btn-warning[disabled] {
+  color: #ffffff;
+  background-color: #f89406;
+  *background-color: #df8505;
+}
+.btn-warning:active,
+.btn-warning.active {
+  background-color: #c67605 \9;
+}
+.btn-danger {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #da4f49;
+  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+  border-color: #bd362f #bd362f #802420;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #bd362f;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger.active,
+.btn-danger.disabled,
+.btn-danger[disabled] {
+  color: #ffffff;
+  background-color: #bd362f;
+  *background-color: #a9302a;
+}
+.btn-danger:active,
+.btn-danger.active {
+  background-color: #942a25 \9;
+}
+.btn-success {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5bb75b;
+  background-image: -moz-linear-gradient(top, #62c462, #51a351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image: -o-linear-gradient(top, #62c462, #51a351);
+  background-image: linear-gradient(to bottom, #62c462, #51a351);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  border-color: #51a351 #51a351 #387038;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #51a351;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  color: #ffffff;
+  background-color: #51a351;
+  *background-color: #499249;
+}
+.btn-success:active,
+.btn-success.active {
+  background-color: #408140 \9;
+}
+.btn-info {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #49afcd;
+  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+  border-color: #2f96b4 #2f96b4 #1f6377;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #2f96b4;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-info:hover,
+.btn-info:active,
+.btn-info.active,
+.btn-info.disabled,
+.btn-info[disabled] {
+  color: #ffffff;
+  background-color: #2f96b4;
+  *background-color: #2a85a0;
+}
+.btn-info:active,
+.btn-info.active {
+  background-color: #24748c \9;
+}
+.btn-inverse {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #363636;
+  background-image: -moz-linear-gradient(top, #444444, #222222);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222));
+  background-image: -webkit-linear-gradient(top, #444444, #222222);
+  background-image: -o-linear-gradient(top, #444444, #222222);
+  background-image: linear-gradient(to bottom, #444444, #222222);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
+  border-color: #222222 #222222 #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #222222;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-inverse:hover,
+.btn-inverse:active,
+.btn-inverse.active,
+.btn-inverse.disabled,
+.btn-inverse[disabled] {
+  color: #ffffff;
+  background-color: #222222;
+  *background-color: #151515;
+}
+.btn-inverse:active,
+.btn-inverse.active {
+  background-color: #080808 \9;
+}
+button.btn,
+input[type="submit"].btn {
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+}
+button.btn::-moz-focus-inner,
+input[type="submit"].btn::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button.btn.btn-large,
+input[type="submit"].btn.btn-large {
+  *padding-top: 7px;
+  *padding-bottom: 7px;
+}
+button.btn.btn-small,
+input[type="submit"].btn.btn-small {
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+}
+button.btn.btn-mini,
+input[type="submit"].btn.btn-mini {
+  *padding-top: 1px;
+  *padding-bottom: 1px;
+}
+.btn-link,
+.btn-link:active {
+  background-color: transparent;
+  background-image: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.btn-link {
+  border-color: transparent;
+  cursor: pointer;
+  color: #0088cc;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.btn-link:hover {
+  color: #005580;
+  text-decoration: underline;
+  background-color: transparent;
+}
+span.gl_goal {
+  color: #70B236;
+  font-weight: bold;
+}
+.gl_btn {
+  padding: 4px 14px!important;
+  font-weight: bold!important;
+}
+.gl_preloader {
+  width: 100%;
+  height: 30px;
+  background: url('http://plugins.thegivinglab.org/images/preloader.gif') no-repeat center center;
+}
+ol {
+  margin: 0px!important;
+  padding: 0px!important;
+}
+ol li {
+  list-style: none;
+  list-style-type: none;
+}
+@media screen and (max-width: 600px) {
+  .gl_component {
+    margin-left: -14px;
+    width: 109%!important;
+  }
+}
+.gl_component div.gl_title {
+  border-bottom: 2px solid #347dc2;
+  padding: 8px 10px 8px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #347dc2;
+}
+.gl_component div.gl_content div.gl_tab {
+  display: none;
+  margin: 10px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 700px) {
+  .gl_component div.gl_content div.gl_tab {
+    margin: 0px;
+  }
+}
+.gl_component div.gl_content div.gl_message {
+  border: 1px solid #d7dbe6;
+  padding: 50px;
+  text-align: center;
+  font-size: 16px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.gl_component div.gl_content div.gl_left div.gl_plugin {
+  background-clip: padding-box;
+  padding: 0px;
+  border: 0px solid #d7dbe6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-top: 10px;
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.gl_component div.gl_content div.gl_tabs {
+  height: 63px;
+  background-color: #f7f9fa;
+  background-image: -moz-linear-gradient(top, #ffffff, #ebeff3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebeff3));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ebeff3);
+  background-image: -o-linear-gradient(top, #ffffff, #ebeff3);
+  background-image: linear-gradient(to bottom, #ffffff, #ebeff3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffebeff3', GradientType=0);
+  border-bottom: 1px solid #D7DBE6;
+}
+@media screen and (max-width: 700px) {
+  .gl_component div.gl_content div.gl_tabs {
+    clear: both;
+    height: 39px;
+  }
+}
+.gl_component div.gl_content div.gl_tabs ul {
+  position: relative;
+  width: 100%;
+  margin: 0px 0 0 10px;
+  padding: 0;
+  list-style: none;
+  line-height: 1em;
+}
+.gl_component div.gl_content div.gl_tabs ul li {
+  float: left;
+}
+@media screen and (max-width: 800px) {
+  .gl_component div.gl_content div.gl_tabs ul li {
+    font-size: 10px;
+  }
+}
+.gl_component div.gl_content div.gl_tabs ul li a,
+.gl_component div.gl_content div.gl_tabs ul li a:link,
+.gl_component div.gl_content div.gl_tabs ul li a:active,
+.gl_component div.gl_content div.gl_tabs ul li a:visited {
+  height: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #818692;
+  float: left;
+  margin: 10px 5px 0 0;
+  padding: 26px 16px 8px 15px;
+  line-height: 26px;
+  border: 1px solid #D7DBE6;
+  border-bottom: none;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  background-repeat: no-repeat;
+  background-image: url(http://plugins.thegivinglab.org/images/all.gif);
+}
+@media screen and (max-width: 800px) {
+  .gl_component div.gl_content div.gl_tabs ul li a,
+  .gl_component div.gl_content div.gl_tabs ul li a:link,
+  .gl_component div.gl_content div.gl_tabs ul li a:active,
+  .gl_component div.gl_content div.gl_tabs ul li a:visited {
+    background: #fff;
+    padding: 5px;
+  }
+}
+.gl_component div.gl_content div.gl_tabs ul li a:hover {
+  color: #414754;
+  border: 1px solid #b0b4bf;
+  border-bottom: none;
+}
+.gl_component div.gl_content div.gl_tabs ul li a.Activity {
+  border-bottom: 1px solid #D7DBE6;
+  background-position: -23px -111px;
+}
+.gl_component div.gl_content div.gl_tabs ul li a.Activity:hover {
+  background-position: -23px -199px;
+  color: #347dc2;
+}
+.gl_component div.gl_content div.gl_tabs ul li a.Groups {
+  border-bottom: 1px solid  #D7DBE6;
+  background-position: -163px -111px;
+}
+.gl_component div.gl_content div.gl_tabs ul li a.Groups:hover {
+  background-position: -163px -199px;
+  color: #347dc2;
+}
+.gl_component div.gl_content div.gl_tabs ul li a.Fundraisers {
+  border-bottom: 1px solid  #D7DBE6;
+  background-position: -297px -111px;
+}
+.gl_component div.gl_content div.gl_tabs ul li a.Fundraisers:hover {
+  background-position: -296px -199px;
+  color: #347dc2;
+}
+.gl_component div.gl_content div.gl_tabs ul li a.Start {
+  border-bottom: 1px solid  #D7DBE6;
+  background-position: -419px -109px;
+}
+.gl_component div.gl_content div.gl_tabs ul li a.Start:hover {
+  background-position: -418px -197px;
+  color: #E93A3A;
+}
+.gl_component div.gl_content div.gl_tabs ul li.selected a.Activity {
+  color: #347dc2;
+  border-bottom: 1px solid white;
+  background-position: -23px -19px;
+}
+.gl_component div.gl_content div.gl_tabs ul li.selected a.Groups {
+  color: #347dc2;
+  border-bottom: 1px solid white;
+  background-position: -163px -19px;
+}
+.gl_component div.gl_content div.gl_tabs ul li.selected a.Fundraisers {
+  color: #347dc2;
+  border-bottom: 1px solid white;
+  background-position: -296px -18px;
+}
+.gl_component div.gl_content div.gl_tabs ul li.selected a.Start {
+  background-color: #fff;
+  color: #E93A3A;
+  border-bottom: 1px solid white;
+  background-position: -418px -16px;
+}
+.gl_component div.gl_content div.gl_tabs ul li:nth-child(4) {
+  float: right;
+  margin-right: 8px;
+}
+.gl_component div.gl_content div.gl_left {
+  margin-right: 400px;
+}
+@media screen and (max-width: 800px) {
+  .gl_component div.gl_content div.gl_left {
+    margin-right: 0px;
+    clear: both;
+  }
+}
+.gl_component div.gl_content div.gl_right {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 800px) {
+  .gl_component div.gl_content div.gl_right {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+.gl_component ul.gl_groupList {
+  padding-left: 0px;
+  min-height: 50px;
+  list-style: none;
+  clear: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.gl_component ul.gl_groupList li.gl_group {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #D7DBE6;
+  min-height: 52px;
+  background-color: #fff;
+}
+.gl_component ul.gl_groupList li.gl_group p {
+  margin: 0px;
+  padding: 0px;
+}
+.gl_component ul.gl_groupList li.gl_group .gl_date {
+  font-size: 10px;
+  font-weight: normal;
+  color: #636875;
+  max-height: 19px;
+}
+.gl_component ul.gl_groupList li.gl_group div.gl_groupText,
+.gl_component ul.gl_groupList li.gl_group div.gl_groupText p {
+  color: #347DC2;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 17px;
+}
+.gl_component ul.gl_groupList li.gl_group .gl_date span {
+  line-height: 20px;
+  font-size: 11px;
+}
+.gl_component ul.gl_groupList .gl_listItem {
+  padding: 7px 2px 7px 7px;
+  margin: 5px 5px 0 5px;
+}
+.gl_component .gl_padding {
+  min-height: 51px!important;
+}
+.gl_component .gl_list-para {
+  line-height: 15px;
+}
+.gl_component .gl_owner {
+  float: right;
+  margin-top: 40px;
+}
+@media screen and (max-width: 900px) {
+  .gl_group div.gl_header {
+    height: 82px!important;
+  }
+  .gl_group div.gl_header a.gl_btn {
+    margin-bottom: 5px;
+  }
+  .gl_group div.gl_header div.gl_gl_btn {
+    width: 138px !important;
+    margin-right: 0px;
+  }
+}
+.gl_plugin {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  color: #636875;
+  background-clip: padding-box;
+  padding-bottom: 6px;
+  border: 1px solid #d7dbe6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background-color: #fcfdfe;
+  background-image: -moz-linear-gradient(top, #ffffff, #f8fafc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f8fafc));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f8fafc);
+  background-image: -o-linear-gradient(top, #ffffff, #f8fafc);
+  background-image: linear-gradient(to bottom, #ffffff, #f8fafc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff8fafc', GradientType=0);
+  -webkit-box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.04) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.04) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.04) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.gl_plugin .gl_h80 {
+  height: 91px;
+}
+.gl_plugin a {
+  color: #347dc2;
+  text-decoration: none;
+  font-weight: bold;
+}
+.gl_plugin a:hover {
+  color: #347dc2;
+  text-decoration: none;
+}
+.gl_plugin a.gl_blue {
+  color: #347dc2!important;
+}
+.gl_plugin a.gl_bluehover {
+  color: #347dc2!important;
+}
+.gl_plugin div.gl_box .gl_paragraph,
+.gl_plugin div.gl_box gl_paragraph p {
+  font-weight: normal;
+  font-size: 12px;
+  margin: 8px 10px 8px 10px;
+}
+.gl_plugin div.gl_box .gl_paragraph img,
+.gl_plugin div.gl_box gl_paragraph p img {
+  width: 100%;
+  border-radius: 4px;
+  background-clip: padding-box;
+  margin-right: 10px;
+  box-shadow: 0 0px 3px #999;
+}
+.gl_plugin div.gl_gl_btn {
+  float: right;
+  margin: 10px 8px 0 0;
+}
+.gl_plugin div.gl_two {
+  width: 50%;
+  float: left;
+}
+.gl_plugin .gl_two_clear {
+  min-height: 135px;
+}
+.gl_plugin div.gl_thirds div {
+  width: 33%;
+}
+.gl_plugin div.gl_fourths div {
+  width: 25%;
+}
+.gl_plugin div.gl_plugin_btn {
+  margin: 0px 0 0 0;
+  float: right;
+}
+.gl_plugin div.gl_memberJoined {
+  font-size: 11px;
+  color: #ccc;
+  padding-top: 3px;
+}
+.gl_plugin div.gl_memberName a {
+  font-size: 14px;
+}
+.gl_plugin div.gl_header {
+  background-clip: padding-box;
+  background-color: #f7f9fa;
+  background-image: -moz-linear-gradient(top, #ffffff, #ebeff3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebeff3));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ebeff3);
+  background-image: -o-linear-gradient(top, #ffffff, #ebeff3);
+  background-image: linear-gradient(to bottom, #ffffff, #ebeff3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffebeff3', GradientType=0);
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.08);
+  height: 52px;
+}
+.gl_plugin div.gl_subHeader {
+  height: 45px;
+}
+.gl_plugin div.gl_inner {
+  margin: 5px 5px 0 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #F3F5F6;
+}
+.gl_plugin div.gl_inner .gl_paragraph {
+  font-weight: normal;
+  margin: 10px;
+}
+.gl_plugin div.gl_line {
+  border-bottom: 1px solid #D7DBE6;
+}
+.gl_plugin div.gl_avatar {
+  background-color: #EEE;
+  border-top: 2px solid #EBEFF3;
+  height: 50px;
+  width: 50px;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 107%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #D7DBE6;
+  background-clip: padding-box;
+  margin-right: 10px;
+  -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.gl_plugin div.gl_small {
+  height: 30px;
+  width: 30px;
+}
+.gl_plugin div.gl_header div.gl_avatar {
+  margin-top: -5px;
+  margin-left: 6px;
+  margin-right: 0px;
+}
+.gl_plugin .gl_padding {
+  padding: 10px;
+  min-height: 46px;
+}
+.gl_plugin div.gl_stat {
+  /* height: 80px; */
+
+  float: left;
+  display: table-column;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #A7A6A7;
+  font-size: 9px;
+  margin-top: 4px;
+  line-height: 10px;
+}
+.gl_plugin div.gl_stat div {
+  margin: 0 auto;
+  width: 50px;
+  height: 42px;
+  background: url('http://plugins.thegivinglab.org/images/icon-sprite.gif') no-repeat center 0;
+}
+.gl_plugin div.gl_stat span {
+  font-size: 13px;
+  line-height: 22px;
+}
+.gl_plugin div.gl_stat_donor div {
+  background-position: center 0;
+}
+.gl_plugin div.gl_stat_donor span {
+  color: #E93A3A;
+}
+.gl_plugin div.gl_stat_given div {
+  background-position: center -42px;
+}
+.gl_plugin div.gl_stat_given span {
+  color: #73B92F;
+}
+.gl_plugin div.gl_stat_raisedtarget div {
+  background-position: 5px -166px;
+}
+.gl_plugin div.gl_stat_raisedtarget span {
+  color: #FFA200;
+}
+.gl_plugin div.gl_stat_target div {
+  background-position: center -42px;
+}
+.gl_plugin div.gl_stat_target span {
+  color: #347DC2;
+}
+.gl_plugin div.gl_stat_events div {
+  background-position: center -84px;
+}
+.gl_plugin div.gl_stat_events span {
+  color: #FFA200;
+}
+.gl_plugin div.gl_stat_groupCount div {
+  background-position: center -127px;
+}
+.gl_plugin div.gl_stat_groupCount span {
+  color: #347DC2;
+}
+.gl_plugin div.gl_stat_members div {
+  background-position: center -126px;
+}
+.gl_plugin div.gl_stat_members span {
+  color: #347DC2;
+}
+.gl_plugin div.gl_stat_itemSingle div {
+  background-position: center -211px;
+}
+.gl_plugin div.gl_stat_itemSingle span {
+  color: #E93A3A;
+}
+.gl_plugin div.gl_title {
+  font-weight: bold;
+  line-height: 14px;
+  float: left;
+  margin: 19px 0 0 10px;
+  font-size: 18px;
+  color: #387EC0;
+}
+.gl_plugin div.gl_title span {
+  font-size: 12px;
+  font-weight: normal;
+  color: #B7B7B7;
+}
+.gl_plugin .gl_innertitle {
+  font-weight: bold;
+  line-height: 14px;
+  font-size: 18px;
+  color: #387EC0;
+  border-bottom: 2px solid #347DC2;
+  padding: 7px 9px 9px 2px;
+  margin-bottom: 14px;
+  margin-left: 5px;
+  margin-right: 6px;
+}
+.gl_plugin div.gl_details {
+  font-weight: bold;
+  line-height: 14px;
+  margin: 0;
+  margin-right: 5px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #387EC0;
+  overflow: hidden;
+  padding: 11px 0px 0 10px;
+  min-height: 29px;
+}
+.gl_plugin div.gl_details span {
+  font-size: 12px;
+  font-weight: normal;
+  color: #B7B7B7;
+}
+@media screen and (max-width: 400px) {
+  .gl_plugin div.gl_details span {
+    font-size: 10px;
+  }
+}
+.gl_plugin div.gl_details span a {
+  font-weight: normal;
+}
+@media screen and (max-width: 400px) {
+  .gl_plugin div.gl_details {
+    font-size: 12px;
+  }
+}
+.gl_plugin .gl_event-icon {
+  background-image: url('http://plugins.thegivinglab.org/images/event.gif');
+  background-position: 8px 5px;
+  background-repeat: no-repeat;
+}
+.gl_plugin .gl_childgroup-icon {
+  background-image: url('http://plugins.thegivinglab.org/images/child-groups.gif');
+  background-position: 8px 5px;
+  background-repeat: no-repeat;
+}
+.gl_plugin div.gl_comment {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 3px 5px 3px 5px;
+  margin: 3px 0 3px 0;
+  border: 1px solid #D7DBE6;
+  font-size: 11px;
+  font-weight: normal;
+  color: #595E6D;
+  background-color: #fafbfb;
+  background-image: -moz-linear-gradient(top, #ffffff, #f3f5f6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f3f5f6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f3f5f6);
+  background-image: -o-linear-gradient(top, #ffffff, #f3f5f6);
+  background-image: linear-gradient(to bottom, #ffffff, #f3f5f6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff3f5f6', GradientType=0);
+}
+.gl_plugin div.gl_comment a {
+  color: #595E6D!important;
+  font-weight: lighter!important;
+}
+.gl_plugin ul.gl_activity {
+  border-left: 4px solid #F4F6F8;
+  margin: 15px 10px 5px 20px;
+  padding: 0;
+  list-style: none;
+  margin-left: 0px;
+  margin-left: 15px;
+  font-weight: normal;
+}
+.gl_plugin ul.gl_activity li {
+  padding: 0px 0 14px 45px;
+  font-weight: normal;
+  font-size: 14px;
+  display: block;
+  float: left;
+  clear: left;
+  margin-left: -17px !important;
+  min-height: 35px;
+  line-height: 17px!important;
+  width: 90%;
+  font-weight: bold;
+}
+.gl_plugin ul.gl_activity li a {
+  color: #347DC2;
+  text-decoration: none;
+  font-weight: bold;
+}
+.gl_plugin ul.gl_activity li div.gl_date {
+  margin: 0px 0 0 0;
+  clear: both;
+  line-height: 10px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #BCB7B7;
+  padding-top: 4px;
+}
+.gl_plugin ul.gl_activity li.gl_donate {
+  background: url('http://plugins.thegivinglab.org/images/activity.gif') no-repeat;
+  margin-left: -14px !important;
+  background-position: 6px top;
+  padding-top: 5px;
+}
+.gl_plugin ul.gl_activity li.gl_donate span.gl_donated {
+  font-size: 10px;
+}
+.gl_plugin ul.gl_activity li.gl_donate span.gl_donated b {
+  font-size: 14px;
+  color: #8BC355;
+}
+.gl_giftAidTaken {
+  color: #CCCCCC;
+  font-size: 10px;
+  font-weight: bold;
+}
+.gl_profile {
+  font-size: 12px;
+  background-clip: padding-box;
+  padding-bottom: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  text-shadow: #fff 0px 1px 0px;
+}
+@media screen and (max-width: 700px) {
+  .gl_profile {
+    width: 100%!important;
+  }
+}
+.gl_profile a.gl_eventLink {
+  max-width: 60%;
+  color: #347DC2;
+  text-decoration: none;
+  font-weight: bold;
+}
+.gl_profile .gl_padding {
+  min-height: 30px;
+}
+div.event {
+  background-color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #D7DBE6;
+  border-bottom: 0px;
+  margin: 5px 5px 0 5px ;
+}
+div.event a {
+  font-size: 14px;
+  font-weight: bold;
+}
+div.event .gl_btn {
+  float: right;
+}
+.gl_border {
+  border: 1px solid #D7DBE6;
+  padding-left: 10px;
+  margin: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  margin-top: 15px;
+}
+.gl_donate {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+.gl_donate a.gl_btn {
+  color: #E63C40!important;
+}
+.gl_donate a.gl_fb_button {
+  color: #3B5998;
+}
+.gl_donate a.gl_fb_button div {
+  width: 15px;
+  height: 15px;
+  margin: 2px 5px 0 -5px;
+  background-image: url('data:image/png;base64,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%3D%3D');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.gl_join {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+}
+.gl_join a.gl_btn {
+  color: #73B92F;
+}
+.gl_join a.gl_btn div {
+  background-position: 0 -14px;
+}
+.gl_createEvent_btn a {
+  color: #FFA200;
+  font-weight: bold;
+}
+.gl_createEvent_btn a:hover {
+  color: #FFA200;
+  font-weight: bold;
+}
+.gl_createEvent_btn div {
+  background: url('http://plugins.thegivinglab.org/images/create-logo.png') no-repeat top left;
+  height: 16px;
+}
+.gl_createEvent_btn .gl_largerBtn div {
+  background: url('http://plugins.thegivinglab.org/images/coin.gif') no-repeat top left;
+  height: 16px;
+  width: 29px;
+  margin-left: -2px;
+  margin-right: 0px;
+}
+.gl_editEvent_btn a {
+  color: #FFA200;
+  font-weight: bold;
+}
+.gl_editEvent_btn a:hover {
+  color: #FFA200;
+  font-weight: bold;
+}
+.gl_editEvent_btn div {
+  background: url('http://plugins.thegivinglab.org/images/edit-event-logo.png') no-repeat top left;
+  height: 16px;
+}
+.gl_createGroup_btn a {
+  color: #387EC0;
+  font-weight: bold;
+}
+.gl_createGroup_btn a:hover {
+  color: #387EC0;
+  font-weight: bold;
+}
+.gl_createGroup_btn div {
+  background: url('http://plugins.thegivinglab.org/images/create-group.png') no-repeat top left;
+}
+.gl_editGroup_btn a {
+  color: #387EC0;
+  font-weight: bold;
+}
+.gl_editGroup_btn a:hover {
+  color: #387EC0;
+  font-weight: bold;
+}
+.gl_editGroup_btn div {
+  background: url('http://plugins.thegivinglab.org/images/edit-group.png') no-repeat top left;
+}
+.gl_editUser_btn a {
+  color: #c038ab;
+  font-weight: bold;
+}
+.gl_editUser_btn a:hover {
+  color: #c038ab;
+  font-weight: bold;
+}
+.gl_editUser_btn div {
+  background: url('http://plugins.thegivinglab.org/images/edit-user.png') no-repeat top left;
+}
+.gl_removeUser_btn {
+  width: 101px;
+}
+.gl_removeUser_btn a {
+  color: #E93A3A;
+  font-weight: bold;
+}
+.gl_removeUser_btn a:hover {
+  color: #E93A3A;
+  font-weight: bold;
+}
+.gl_removeUser_btn div {
+  background: url('http://plugins.thegivinglab.org/images/remove-user.gif') no-repeat top left;
+}
+.gl_pay_btn {
+  width: 101px;
+}
+.gl_pay_btn a {
+  color: #73B92F;
+  font-weight: bold;
+}
+.gl_pay_btn a:hover {
+  color: #73B92F;
+  font-weight: bold;
+}
+.gl_pay_btn div {
+  background: url('http://plugins.thegivinglab.org/images/pound-btn.gif') no-repeat top left;
+}
+.gl_Event a.gl_eventType {
+  color: #FFA200!important;
+}
+.gl_EventDonation a.gl_eventType {
+  color: #8BC355!important;
+}
+a.gl_grey {
+  color: #999!important;
+  font-size: 12px;
+}
+.gl_floatLeft {
+  float: left;
+}
+#gl_mask {
+  background: #000;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99999;
+}
+#gl_mask img {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -75px;
+}
+#gl_mask.show {
+  opacity: .8;
+  -webkit-transition: opacity .1s linear;
+  -moz-transition: opacity .1s linear;
+  -o-transition: opacity .1s linear;
+  transition: opacity .1s linear;
+}
+#gl_modal {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  margin-left: -350px;
+  width: 750px;
+  top: -700px;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 10px #000000;
+  -moz-box-shadow: 0 1px 10px #000000;
+  box-shadow: 0 1px 10px #000000;
+  z-index: 99999;
+}
+#gl_modal.show {
+  top: 0px;
+  -webkit-transition: opacity .3s linear, top .3s ease-out;
+  -moz-transition: opacity .3s linear, top .3s ease-out;
+  -o-transition: opacity .3s linear, top .3s ease-out;
+  transition: opacity .3s linear, top .3s ease-out;
+}
+#gl_modal_main #gl_modal_title {
+  font-weight: bold;
+  margin: 10px 20px 10px 20px;
+  padding-bottom: 10px;
+  color: #347dc2;
+  font-size: 20px;
+  border-bottom: 1px solid #efefef;
+}
+#gl_modal_main #gl_modal_title a#gl_modal_close {
+  color: #DADADA;
+  float: right;
+  cursor: pointer;
+}
+#gl_modal_main #gl_modal_title a:hover#gl_modal_close {
+  color: #347DC2;
+}
+#gl_modal_main #modal-content {
+  margin: 0px 20px 10px 20px;
+}
+#gl_modal_main #modal-content #connect {
+  width: 300px;
+  margin: 20px auto 20px auto;
+  height: 100px;
+}
+#gl_modal_main #modal-content #connect img {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+#gl_modal_main #modal-content #connect div.user {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: url('http://plugins.thegivinglab.org/images/connect-user.gif') no-repeat top center;
+}
+#gl_modal_main #modal-content #connect div.user-ok {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: url('http://plugins.thegivinglab.org/images/connect-user.gif') no-repeat center center;
+}
+#gl_modal_main #modal-content #connect div.user-error {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: url('http://plugins.thegivinglab.org/images/connect-user.gif') no-repeat bottom center;
+}
+#gl_modal_main #modal-content #connect div.ani {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: url('http://plugins.thegivinglab.org/images/connect-ani.gif') no-repeat center center;
+}
+#gl_modal_main #modal-content #action {
+  height: 100px;
+  text-align: center;
+}
+#gl_modal_footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #f2f2f2;
+  border-top: 1px solid #dadada;
+  height: 50px;
+  border-radius: 0 0 6px 6px;
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, #f2f2f2, #ffffff);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #ffffff);
+  background-image: -o-linear-gradient(top, #f2f2f2, #ffffff);
+  background-image: linear-gradient(to bottom, #f2f2f2, #ffffff);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffffffff', GradientType=0);
+}
+.gl_slider {
+  height: 50px;
+  margin-top: 10px;
+}
+.gl_target {
+  width: 23%;
+  float: left;
+}
+.gl_sliderContainer {
+  width: 52%;
+  float: left;
+  padding: 1%;
+  margin-top: 11px;
+  background-color: #EEF0F2;
+  border-radius: 50px;
+  box-shadow: 1px 1px 2px 1px #C6C6C6 inset;
+  background: #ebebeb;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #ebebeb 0%, #e7e7e7 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ebebeb), color-stop(100%, #e7e7e7));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #ebebeb 0%, #e7e7e7 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #ebebeb 0%, #e7e7e7 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #ebebeb 0%, #e7e7e7 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #ebebeb 0%, #e7e7e7 100%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#e7e7e7', GradientType=0);
+  /* IE6-9 */
+
+}
+.gl_indicator {
+  width: 0%;
+  height: 8px;
+  border: 1px solid #5a9122;
+  border-top-color: #6eb626;
+  background-color: #73B92F;
+  border-radius: 50px;
+  box-shadow: 1px 1px 1px 0px #999999;
+  background: #8bcc4a;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #8bcc4a 1%, #6cac2e 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #8bcc4a), color-stop(100%, #6cac2e));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #8bcc4a 1%, #6cac2e 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #8bcc4a 1%, #6cac2e 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #8bcc4a 1%, #6cac2e 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #8bcc4a 1%, #6cac2e 100%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8bcc4a', endColorstr='#6cac2e', GradientType=0);
+  /* IE6-9 */
+
+  -webkit-transition: width .7s ease-out;
+  -moz-transition: width .7s ease-out;
+  -o-transition: width .7s ease-out;
+  transition: width .7s ease-out;
+}
+.gl_total {
+  width: 23%;
+  float: left;
+}
+ul#gl_countdownMarkers {
+  padding-left: 0px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+ul#gl_countdownMarkers li {
+  display: inline-block;
+  list-style: none;
+  height: 90px;
+  width: 57px;
+  background: url(http://plugins.thegivinglab.org/images/date-square.png) no-repeat center top;
+}
+ul#gl_countdownMarkers li span {
+  font-weight: bold;
+  line-height: 56px;
+  color: #73B92F;
+  font-size: 27px;
+  text-shadow: 0px 1px 0px #999;
+  filter: dropshadow(color=#999999, offx=0, offy=1);
+  opacity: 0.8;
+}
+ul#gl_countdownMarkers li .gl_paragraph {
+  text-align: center;
+  font-weight: bold;
+  font-size: 9px;
+  line-height: 1em;
+}
+span.gl_charityLink {
+  font-size: 12px!important;
+  font-weight: lighter;
+}
+span.gl_charityLink a {
+  color: #347DD3!important;
+  font-size: 12px!important;
+  font-weight: lighter;
+}
+.gl_group .gl_box .gl_groupEventHeader {
+  margin: 0px;
+  padding: 0px;
+  font-size: 12px;
+}
+.gl_group .gl_box span.date {
+  float: right;
+  font-weight: bold;
+  color: #ccc;
+  font-size: 12px;
+}
+.gl_group .gl_box span.gl_goal {
+  font-size: 14px;
+}
+.gl_event_countdown_header {
+  text-align: center!important;
+  height: 20px!important;
+}
+.gl_iconHeader {
+  background-position: -4px -5px;
+  background-repeat: no-repeat;
+  padding-left: 44px!important;
+  margin-left: 6px!important;
+  margin-top: 4px!important;
+}
+.gl_tick {
+  background-image: url('http://plugins.thegivinglab.org/images/blue_tick.gif');
+}
+.gl_info {
+  background-image: url('http://plugins.thegivinglab.org/images/blue_info.gif');
+}
+.gl_gift {
+  background-image: url('http://plugins.thegivinglab.org/images/heart-icon.gif');
+}
+li.gl_activityType {
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+li.gl_activityType a {
+  font-weight: bold;
+}
+li.gl_EventDonation {
+  background-image: url('http://plugins.thegivinglab.org/images/activity.gif');
+}
+li.gl_Event {
+  background-image: url('http://plugins.thegivinglab.org/images/event.gif');
+}
+li.gl_GroupMember {
+  background-image: url('http://plugins.thegivinglab.org/images/new-member.gif');
+}
+.gl_noPadding {
+  padding: 0px!important;
+  margin-top: 10px;
+}
+.gl_search .gl_top {
+  font-size: 14px;
+  color: #347DC2;
+  font-weight: normal;
+  margin: 20px 0 0 14px;
+}
+.gl_search .gl_searchBox {
+  padding: 12px;
+  padding-right: 6px;
+}
+.gl_search .gl_searchBox .gl_gl_btn {
+  margin: 0px;
+}
+.gl_search .gl_searchBox input[type=text] {
+  height: 20px;
+  margin-right: 5%;
+  width: 50%;
+}
+.gl_search .gl_searchBox input[type=submit] {
+  width: 30%;
+  height: 20px;
+}
+.gl_search .gl_searchBox .gl_searchField {
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid #D7DBE6;
+}
+.gl_search .gl_charityImage {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  float: left;
+  margin-left: 5px;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border: 1px solid #D7DBE6;
+}
+.gl_search .gl_charityImage img {
+  height: 100%;
+}
+.gl_search .gl_gl_btn {
+  width: 40%;
+  margin: 0px!important;
+}
+.gl_search .gl_gl_btn a.gl_btn {
+  width: 140px;
+  float: right;
+  margin-right: 10px;
+  max-width: 73%;
+}
+.gl_search .gl_charityDetails {
+  float: left;
+  margin-left: 1%;
+  width: 55%;
+  margin-right: 4%;
+  margin-top: 5px;
+  line-height: 20px;
+}
+.gl_search .gl_charityDetails .gl_charityName a {
+  font-size: 14px;
+  color: #347DC2;
+  font-weight: bold;
+  line-height: 23px;
+}
+.gl_search .gl_charityDetails .gl_charityName a:hover {
+  text-decoration: underline;
+}
+.gl_search .gl_charityDetails .gl_charityNumber a {
+  font-size: 12px;
+  color: #B7B7B7;
+}
+.gl_search .gl_charityDetails .gl_two .gl_gl_btn {
+  margin-bottom: 10px;
+}
+.gl_search div.gl_search_results ul li {
+  border-bottom: 2px solid #F3F5F6;
+  padding-bottom: 21px;
+}
+.gl_search ul.gl_searchResultsList {
+  margin: 0px;
+  padding: 0px;
+}
+.gl_search ul.gl_searchResultsList li {
+  list-style: none;
+}
+.gl_search .gl_loading {
+  height: 30px;
+  background-image: url('http://plugins.thegivinglab.org/images/preloader.gif');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.gl_search .gl_noResults {
+  padding: 5px;
+}
+.gl_campaign .gl_headline {
+  color: #E93A3A;
+  font-size: 21px;
+  font-weight: bold;
+  float: left;
+  width: 67%;
+  line-height: 100%;
+}
+.gl_campaign .gl_campaign_thumb {
+  float: right;
+  width: 30%;
+  height: 70px;
+  overflow: hidden;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 3px solid #EBEFF3;
+  border-top: 2px solid #EBEFF3;
+  -webkit-box-shadow: 0 -1px 0px #d5d9e4;
+  -moz-box-shadow: 0 -1px 0px #d5d9e4;
+  box-shadow: 0 -1px 0px #d5d9e4;
+  background-position: center center;
+  background-size: 140%;
+}
+.gl_campaign .gl_footer {
+  background-position: right center;
+  background-size: 21%;
+  background-repeat: no-repeat;
+  padding: 10px;
+}
+.gl_campaign .gl_footer span {
+  font-size: 12px;
+  color: #999;
+}
+.gl_campaign .gl_footer span img {
+  width: 23%;
+  float: right;
+  top: -12px;
+  position: relative;
+}
+.gl_campaign .gl_two div.gl_gl_btn {
+  margin: 10px!important;
+  float: none;
+}
+.gl_campaign div.gl_stackedBtn {
+  height: 31px;
+}
+.gl_campaign div.gl_stackedBtn div a {
+  width: 80%;
+  float: right;
+}
+.gl_campaign div.gl_stackedBtn div a.gl_largerBtn {
+  text-align: right;
+  padding-left: 6px!important;
+  width: 103px;
+}
+.gl_campaign div.gl_stackedBtn div a.gl_largerBtn div {
+  margin-left: 0px;
+}
+.gl_campaign .gl_large {
+  width: 96%!important;
+  height: 113px!important;
+  margin-left: 10px;
+  margin-top: 9px;
+}
+.gl_campaign .gl_vidFrame {
+  width: 93%!important;
+  margin-left: 3%;
+  margin-right: 3%!important;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.gl_campaign .gl_paragraph {
+  font-weight: normal;
+  font-size: 12px;
+  color: #636875;
+}
+.gl_campaign .gl_paragraph h1,
+.gl_campaign .gl_paragraph h2,
+.gl_campaign .gl_paragraph h3 {
+  border: 0px;
+  color: #636875;
+  font-size: 20px;
+  padding: 2px;
+}
+.gl_campaign .gl_paragraph h4,
+.gl_campaign .gl_paragraph h5,
+.gl_campaign .gl_paragraph h6 {
+  border: 0px;
+  color: #636875;
+  font-size: 15px;
+  padding: 2px;
+}
+.gl_campaign .gl_paragraph p {
+  font-weight: normal;
+  font-size: 12px;
+  color: #636875;
+}
+li.gl_li {
+  padding: 0px;
+  margin: 0px;
+}
+li.gl_li p {
+  margin: 0px;
+}
+.gl_countdownHeader {
+  text-align: center;
+  padding-top: 10px;
+}
+.gl_countdownHeader .gl_countdownDate {
+  color: #347DC2;
+  font-weight: bold;
+  font-size: 14px;
+}
+.gl_gap {
+  height: 8px;
+}
+.gl_smsRow {
+  background-image: url('http://plugins.thegivinglab.org/images/phone-icon.gif');
+  background-position: 4px center;
+  background-repeat: no-repeat;
+  color: #6A6A6A;
+  font-size: 12px;
+  padding: 10px;
+  padding-left: 51px;
+  line-height: 16px;
+  min-height: 14px;
+}
+a.gl_moreInfo {
+  color: #999;
+  font-size: 10px!important;
+  line-height: 21px;
+}
+.gl_importantColor .gl_createGroup_btn a {
+  color: #3C7FBE!important;
+}
+.gl_importantColor .gl_createEvent_btn a {
+  color: #FCA124!important;
+}
+.gl_dropdownTrigger {
+  padding-bottom: 5px;
+  overflow: hidden;
+  height: 41px;
+  cursor: pointer;
+}
+.gl_dropdownTrigger a:nth-child(1) .arrow {
+  width: 50px;
+  float: right;
+  height: 20px;
+  background-image: url('http://plugins.thegivinglab.org/images/dropDownArrows.gif');
+  background-position: right -118px;
+  background-repeat: no-repeat;
+}
+.gl_dropdownTrigger a:nth-child(1).active .arrow {
+  background-image: url('http://plugins.thegivinglab.org/images/dropDownArrows.gif');
+  background-position: 3px -14px;
+  background-repeat: no-repeat;
+}
+iframe {
+  overflow: auto!important;
+}
+/*
+VideoJS Default Styles (http://videojs.com)
+Version 3.2.0
+*/
+/*
+REQUIRED STYLES (be careful overriding)
+================================================================================ */
+/* When loading the player, the video tag is replaced with a DIV,
+   that will hold the video tag or object tag for other playback methods.
+   The div contains the video playback element (Flash or HTML5) and controls, and sets the width and height of the video.
+
+   ** If you want to add some kind of border/padding (e.g. a frame), or special positioning, use another containing element.
+   Otherwise you risk messing up control positioning and full window mode. **
+*/
+.video-js {
+  background-color: #000;
+  position: relative;
+  padding: 0;
+  /* Start with 10px for base font size so other dimensions can be em based and easily calculable. */
+
+  font-size: 10px;
+  /* Allow poster to be vertially aligned. */
+
+  vertical-align: middle;
+  /*  display: table-cell; */
+  /*This works in Safari but not Firefox.*/
+
+}
+/* Playback technology elements expand to the width/height of the containing div. <video> or <object> */
+.video-js .vjs-tech {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Fix for Firefox 9 fullscreen (only if it is enabled). Not needed when checking fullScreenEnabled. */
+.video-js:-moz-full-screen {
+  position: absolute;
+}
+/* Fullscreen Styles */
+body.vjs-full-window {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow-y: auto;
+  /* Fix for IE6 full-window. http://www.cssplay.co.uk/layouts/fixed.html */
+
+}
+.video-js.vjs-fullscreen {
+  position: fixed;
+  overflow: hidden;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+  _position: absolute;
+  /* IE6 Full-window (underscore hack) */
+
+}
+.video-js:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* Poster Styles */
+.vjs-poster {
+  margin: 0 auto;
+  padding: 0;
+  cursor: pointer;
+  /* Scale with the size of the player div. Works when poster is vertically shorter, but stretches when it's less wide. */
+
+  position: relative;
+  width: 100%;
+  max-height: 100%;
+}
+/* Text Track Styles */
+/* Overall track holder for both captions and subtitles */
+.video-js .vjs-text-track-display {
+  text-align: center;
+  position: absolute;
+  bottom: 4em;
+  left: 1em;
+  right: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* Individual tracks */
+.video-js .vjs-text-track {
+  display: none;
+  color: #fff;
+  font-size: 1.4em;
+  text-align: center;
+  margin-bottom: 0.1em;
+  /* Transparent black background, or fallback to all black (IE6) */
+
+  background: #000000;
+  background: rgba(0, 0, 0, 0.5);
+}
+.video-js .vjs-subtitles {
+  color: #fff;
+}
+.video-js .vjs-captions {
+  color: #fc6;
+}
+.vjs-tt-cue {
+  display: block;
+}
+/* Fading sytles, used to fade control bar. */
+.vjs-fade-in {
+  visibility: visible !important;
+  /* Needed to make sure things hide in older browsers too. */
+
+  opacity: 1 !important;
+  -webkit-transition: visibility 0s linear 0s, opacity 0.3s linear;
+  -moz-transition: visibility 0s linear 0s, opacity 0.3s linear;
+  -ms-transition: visibility 0s linear 0s, opacity 0.3s linear;
+  -o-transition: visibility 0s linear 0s, opacity 0.3s linear;
+  transition: visibility 0s linear 0s, opacity 0.3s linear;
+}
+.vjs-fade-out {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  -webkit-transition: visibility 0s linear 1.5s,opacity 1.5s linear;
+  -moz-transition: visibility 0s linear 1.5s,opacity 1.5s linear;
+  -ms-transition: visibility 0s linear 1.5s,opacity 1.5s linear;
+  -o-transition: visibility 0s linear 1.5s,opacity 1.5s linear;
+  transition: visibility 0s linear 1.5s,opacity 1.5s linear;
+}
+/* DEFAULT SKIN (override in another file to create new skins)
+================================================================================
+Instead of editing this file, I recommend creating your own skin CSS file to be included after this file,
+so you can upgrade to newer versions easier. You can remove all these styles by removing the 'vjs-default-skin' class from the tag. */
+/* The default control bar. Created by bar.js */
+.vjs-default-skin .vjs-controls {
+  position: absolute;
+  bottom: 0;
+  /* Distance from the bottom of the box/video. Keep 0. Use height to add more bottom margin. */
+
+  left: 0;
+  right: 0;
+  /* 100% width of div */
+
+  margin: 0;
+  padding: 0;
+  /* Controls are absolutely position, so no padding necessary */
+
+  height: 2.6em;
+  /* Including any margin you want above or below control items */
+
+  color: #fff;
+  border-top: 1px solid #404040;
+  /* CSS Gradient */
+
+  /* Can use the Ultimate CSS Gradient Generator: http://www.colorzilla.com/gradient-editor/ */
+
+  background: #242424;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #242424 50%, #1f1f1f 50%, #171717 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(50%, #242424), color-stop(50%, #1f1f1f), color-stop(100%, #171717));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #242424 50%, #1f1f1f 50%, #171717 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #242424 50%, #1f1f1f 50%, #171717 100%);
+  /* Opera11.10+ */
+
+  background: -ms-linear-gradient(top, #242424 50%, #1f1f1f 50%, #171717 100%);
+  /* IE10+ */
+
+  /* Filter was causing a lot of weird issues in IE. Elements would stop showing up, or other styles would break. */
+
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', endColorstr='#171717',GradientType=0 );*/
+  /* IE6-9 */
+
+  background: linear-gradient(top, #242424 50%, #1f1f1f 50%, #171717 100%);
+  /* W3C */
+
+  /* Start hidden and with 0 opacity. Opacity is used to fade in modern browsers. */
+
+  /* Can't use display block to hide initially because widths of slider handles aren't calculated and avaialbe for positioning correctly. */
+
+  visibility: hidden;
+  opacity: 0;
+}
+/* General styles for individual controls. */
+.vjs-default-skin .vjs-control {
+  position: relative;
+  float: left;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 2.6em;
+  width: 2.6em;
+}
+.vjs-default-skin .vjs-control:focus {
+  outline: 0;
+  /*  background-color: #555;*/
+
+}
+/* Hide control text visually, but have it available for screenreaders: h5bp.com/v */
+.vjs-default-skin .vjs-control-text {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/* Play/Pause
+-------------------------------------------------------------------------------- */
+.vjs-default-skin .vjs-play-control {
+  width: 5em;
+  cursor: pointer !important;
+}
+/* Play Icon */
+.vjs-default-skin.vjs-paused .vjs-play-control div {
+  width: 15px;
+  height: 17px;
+  background: url('video-js.png');
+  margin: 0.5em auto 0;
+}
+.vjs-default-skin.vjs-playing .vjs-play-control div {
+  width: 15px;
+  height: 17px;
+  background: url('video-js.png') -25px 0;
+  margin: 0.5em auto 0;
+}
+/* Rewind
+-------------------------------------------------------------------------------- */
+.vjs-default-skin .vjs-rewind-control {
+  width: 5em;
+  cursor: pointer !important;
+}
+.vjs-default-skin .vjs-rewind-control div {
+  width: 19px;
+  height: 16px;
+  background: url('video-js.png');
+  margin: 0.5em auto 0;
+}
+/* Volume/Mute
+-------------------------------------------------------------------------------- */
+.vjs-default-skin .vjs-mute-control {
+  width: 3.8em;
+  cursor: pointer !important;
+  float: right;
+}
+.vjs-default-skin .vjs-mute-control div {
+  width: 22px;
+  height: 16px;
+  background: url('video-js.png') -75px -25px;
+  margin: 0.5em auto 0;
+}
+.vjs-default-skin .vjs-mute-control.vjs-vol-0 div {
+  background: url('video-js.png') 0 -25px;
+}
+.vjs-default-skin .vjs-mute-control.vjs-vol-1 div {
+  background: url('video-js.png') -25px -25px;
+}
+.vjs-default-skin .vjs-mute-control.vjs-vol-2 div {
+  background: url('video-js.png') -50px -25px;
+}
+.vjs-default-skin .vjs-volume-control {
+  width: 5em;
+  float: right;
+}
+.vjs-default-skin .vjs-volume-bar {
+  position: relative;
+  width: 5em;
+  height: 0.6em;
+  margin: 1em auto 0;
+  cursor: pointer !important;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-radius: 0.3em;
+  background: #666;
+  background: -moz-linear-gradient(top, #333333, #666666);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#666666));
+  background: -webkit-linear-gradient(top, #333333, #666666);
+  background: -o-linear-gradient(top, #333333, #666666);
+  background: -ms-linear-gradient(top, #333333, #666666);
+  background: linear-gradient(top, #333333, #666666);
+}
+.vjs-default-skin .vjs-volume-level {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.6em;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-radius: 0.3em;
+  background: #fff;
+  background: -moz-linear-gradient(top, #ffffff, #cccccc);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#cccccc));
+  background: -webkit-linear-gradient(top, #ffffff, #cccccc);
+  background: -o-linear-gradient(top, #ffffff, #cccccc);
+  background: -ms-linear-gradient(top, #ffffff, #cccccc);
+  background: linear-gradient(top, #ffffff, #cccccc);
+}
+.vjs-default-skin .vjs-volume-handle {
+  position: absolute;
+  top: -0.2em;
+  width: 0.8em;
+  height: 0.8em;
+  background: #ccc;
+  left: 0;
+  border: 1px solid #fff;
+  -moz-border-radius: 0.6em;
+  -webkit-border-radius: 0.6em;
+  border-radius: 0.6em;
+}
+/* Progress
+-------------------------------------------------------------------------------- */
+.vjs-default-skin div.vjs-progress-control {
+  position: absolute;
+  left: 4.8em;
+  right: 4.8em;
+  /* Leave room for time displays. */
+
+  height: 1.0em;
+  width: auto;
+  top: -1.3em;
+  /* Set above the rest of the controls. And leave room for 2px of borders (progress bottom and controls top). */
+
+  border-bottom: 1px solid #1F1F1F;
+  border-top: 1px solid #222;
+  /* CSS Gradient */
+
+  background: #333;
+  background: -moz-linear-gradient(top, #222222, #333333);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#333333));
+  background: -webkit-linear-gradient(top, #222222, #333333);
+  background: -o-linear-gradient(top, #333333, #222222);
+  background: -ms-linear-gradient(top, #333333, #222222);
+  background: linear-gradient(top, #333333, #222222);
+  /* 1px top shadow */
+
+  /*  -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.15); box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.15);*/
+
+}
+/* Box containing play and load progresses. Also acts as seek scrubber. */
+.vjs-default-skin .vjs-progress-holder {
+  position: relative;
+  cursor: pointer !important;
+  /*overflow: hidden;*/
+
+  padding: 0;
+  margin: 0;
+  /* Placement within the progress control item */
+
+  height: 1.0em;
+  -moz-border-radius: 0.6em;
+  -webkit-border-radius: 0.6em;
+  border-radius: 0.6em;
+  /* CSS Gradient */
+
+  background: #111;
+  background: -moz-linear-gradient(top, #111111, #262626);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#111111), to(#262626));
+  background: -webkit-linear-gradient(top, #111111, #262626);
+  background: -o-linear-gradient(top, #111111, #262626);
+  background: -ms-linear-gradient(top, #111111, #262626);
+  background: linear-gradient(top, #111111, #262626);
+}
+.vjs-default-skin .vjs-progress-holder .vjs-play-progress,
+.vjs-default-skin .vjs-progress-holder .vjs-load-progress {
+  /* Progress Bars */
+
+  position: absolute;
+  display: block;
+  height: 1.0em;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  /*Needed for IE6*/
+
+  -moz-border-radius: 0.6em;
+  -webkit-border-radius: 0.6em;
+  border-radius: 0.6em;
+  /*width: 0;*/
+
+}
+.vjs-default-skin .vjs-play-progress {
+  /* CSS Gradient. */
+
+  background: #fff;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #ffffff 0%, #d6d6d6 50%, #ffffff 100%);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #ffffff), color-stop(50%, #d6d6d6), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(top, #ffffff 0%, #d6d6d6 50%, #ffffff 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #d6d6d6 50%, #ffffff 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #d6d6d6 50%, #ffffff 100%);
+  background: linear-gradient(top, #ffffff 0%, #d6d6d6 50%, #ffffff 100%);
+  background: #efefef;
+  background: -moz-linear-gradient(top, #efefef 0%, #f5f5f5 50%, #dbdbdb 50%, #f1f1f1 100%);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(50%, #f5f5f5), color-stop(50%, #dbdbdb), color-stop(100%, #f1f1f1));
+  background: -webkit-linear-gradient(top, #efefef 0%, #f5f5f5 50%, #dbdbdb 50%, #f1f1f1 100%);
+  background: -o-linear-gradient(top, #efefef 0%, #f5f5f5 50%, #dbdbdb 50%, #f1f1f1 100%);
+  background: -ms-linear-gradient(top, #efefef 0%, #f5f5f5 50%, #dbdbdb 50%, #f1f1f1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#f1f1f1', GradientType=0);
+  background: linear-gradient(top, #efefef 0%, #f5f5f5 50%, #dbdbdb 50%, #f1f1f1 100%);
+}
+.vjs-default-skin .vjs-load-progress {
+  opacity: 0.8;
+  /* CSS Gradient */
+
+  background: #666;
+  background: -moz-linear-gradient(top, #666666, #333333);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666666), to(#333333));
+  background: -webkit-linear-gradient(top, #666666, #333333);
+  background: -o-linear-gradient(top, #666666, #333333);
+  background: -ms-linear-gradient(top, #666666, #333333);
+  background: linear-gradient(top, #666666, #333333);
+}
+.vjs-default-skin div.vjs-seek-handle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  /* Match img pixles */
+
+  margin-top: -0.3em;
+  left: 0;
+  top: 0;
+  /*Needed for IE6*/
+
+  background: url('video-js.png') 0 -50px;
+  /* CSS Curved Corners. Needed to make shadows curved. */
+
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  border-radius: 0.8em;
+  /* CSS Shadows */
+
+  -webkit-box-shadow: 0 2px 4px 0 #000;
+  -moz-box-shadow: 0 2px 4px 0 #000;
+  box-shadow: 0 2px 4px 0 #000;
+}
+/* Time Display
+-------------------------------------------------------------------------------- */
+.vjs-default-skin .vjs-time-controls {
+  position: absolute;
+  right: 0;
+  height: 1.0em;
+  width: 4.8em;
+  top: -1.3em;
+  border-bottom: 1px solid #1F1F1F;
+  border-top: 1px solid #222;
+  background-color: #333;
+  font-size: 1em;
+  line-height: 1.0em;
+  font-weight: normal;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #333;
+  background: -moz-linear-gradient(top, #222222, #333333);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#333333));
+  background: -webkit-linear-gradient(top, #222222, #333333);
+  background: -o-linear-gradient(top, #333333, #222222);
+  background: -ms-linear-gradient(top, #333333, #222222);
+  background: linear-gradient(top, #333333, #222222);
+  /* 1px top shadow */
+
+  /*  -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.15); box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.15);*/
+
+}
+.vjs-default-skin .vjs-current-time {
+  left: 0;
+}
+.vjs-default-skin .vjs-duration {
+  right: 0;
+  display: none;
+}
+.vjs-default-skin .vjs-remaining-time {
+  right: 0;
+}
+.vjs-time-divider {
+  display: none;
+}
+.vjs-default-skin .vjs-time-control {
+  font-size: 1em;
+  line-height: 1;
+  font-weight: normal;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.vjs-default-skin .vjs-time-control span {
+  line-height: 25px;
+  /* Centering vertically */
+}
+/* Fullscreen
+-------------------------------------------------------------------------------- */
+.vjs-secondary-controls {
+  float: right;
+}
+.vjs-default-skin .vjs-fullscreen-control {
+  width: 3.8em;
+  cursor: pointer !important;
+  float: right;
+}
+.vjs-default-skin .vjs-fullscreen-control div {
+  width: 16px;
+  height: 16px;
+  background: url('video-js.png') -50px 0;
+  margin: 0.5em auto 0;
+}
+.vjs-default-skin.vjs-fullscreen .vjs-fullscreen-control div {
+  background: url('video-js.png') -75px 0;
+}
+/* Big Play Button (at start)
+---------------------------------------------------------*/
+.vjs-default-skin .vjs-big-play-button {
+  display: block;
+  /* Start hidden */
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8.0em;
+  height: 8.0em;
+  margin: -42px 0 0 -42px;
+  text-align: center;
+  vertical-align: center;
+  cursor: pointer !important;
+  border: 0.2em solid #fff;
+  opacity: 0.95;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: #454545;
+  background: -moz-linear-gradient(top, #454545 0%, #232323 50%, #161616 50%, #3f3f3f 100%);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #454545), color-stop(50%, #232323), color-stop(50%, #161616), color-stop(100%, #3f3f3f));
+  background: -webkit-linear-gradient(top, #454545 0%, #232323 50%, #161616 50%, #3f3f3f 100%);
+  background: -o-linear-gradient(top, #454545 0%, #232323 50%, #161616 50%, #3f3f3f 100%);
+  background: -ms-linear-gradient(top, #454545 0%, #232323 50%, #161616 50%, #3f3f3f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#3f3f3f', GradientType=0);
+  background: linear-gradient(top, #454545 0%, #232323 50%, #161616 50%, #3f3f3f 100%);
+  /* CSS Shadows */
+
+  -webkit-box-shadow: 4px 4px 8px #000;
+  -moz-box-shadow: 4px 4px 8px #000;
+  box-shadow: 4px 4px 8px #000;
+}
+.vjs-default-skin div.vjs-big-play-button:hover {
+  -webkit-box-shadow: 0 0 80px #fff;
+  -moz-box-shadow: 0 0 80px #fff;
+  box-shadow: 0 0 80px #fff;
+}
+.vjs-default-skin div.vjs-big-play-button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 35px;
+  height: 42px;
+  margin: -20px 0 0 -15px;
+  /* Using negative margin to center image. */
+
+  background: url('video-js.png') -100px 0;
+}
+/* Loading Spinner
+---------------------------------------------------------*/
+/* CSS Spinners by Kilian Valkhof - http://kilianvalkhof.com/2010/css-xhtml/css3-loading-spinners-without-images/ */
+.vjs-loading-spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55px;
+  height: 55px;
+  margin: -28px 0 0 -28px;
+  -webkit-animation-name: rotatethis;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: rotatethis;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+}
+@-webkit-keyframes rotatethis {
+  0% {
+    -webkit-transform: scale(0.6) rotate(0deg);
+  }
+  12.5% {
+    -webkit-transform: scale(0.6) rotate(0deg);
+  }
+  12.51% {
+    -webkit-transform: scale(0.6) rotate(45deg);
+  }
+  25% {
+    -webkit-transform: scale(0.6) rotate(45deg);
+  }
+  25.01% {
+    -webkit-transform: scale(0.6) rotate(90deg);
+  }
+  37.5% {
+    -webkit-transform: scale(0.6) rotate(90deg);
+  }
+  37.51% {
+    -webkit-transform: scale(0.6) rotate(135deg);
+  }
+  50% {
+    -webkit-transform: scale(0.6) rotate(135deg);
+  }
+  50.01% {
+    -webkit-transform: scale(0.6) rotate(180deg);
+  }
+  62.5% {
+    -webkit-transform: scale(0.6) rotate(180deg);
+  }
+  62.51% {
+    -webkit-transform: scale(0.6) rotate(225deg);
+  }
+  75% {
+    -webkit-transform: scale(0.6) rotate(225deg);
+  }
+  75.01% {
+    -webkit-transform: scale(0.6) rotate(270deg);
+  }
+  87.5% {
+    -webkit-transform: scale(0.6) rotate(270deg);
+  }
+  87.51% {
+    -webkit-transform: scale(0.6) rotate(315deg);
+  }
+  100% {
+    -webkit-transform: scale(0.6) rotate(315deg);
+  }
+}
+@-moz-keyframes rotatethis {
+  0% {
+    -moz-transform: scale(0.6) rotate(0deg);
+  }
+  12.5% {
+    -moz-transform: scale(0.6) rotate(0deg);
+  }
+  12.51% {
+    -moz-transform: scale(0.6) rotate(45deg);
+  }
+  25% {
+    -moz-transform: scale(0.6) rotate(45deg);
+  }
+  25.01% {
+    -moz-transform: scale(0.6) rotate(90deg);
+  }
+  37.5% {
+    -moz-transform: scale(0.6) rotate(90deg);
+  }
+  37.51% {
+    -moz-transform: scale(0.6) rotate(135deg);
+  }
+  50% {
+    -moz-transform: scale(0.6) rotate(135deg);
+  }
+  50.01% {
+    -moz-transform: scale(0.6) rotate(180deg);
+  }
+  62.5% {
+    -moz-transform: scale(0.6) rotate(180deg);
+  }
+  62.51% {
+    -moz-transform: scale(0.6) rotate(225deg);
+  }
+  75% {
+    -moz-transform: scale(0.6) rotate(225deg);
+  }
+  75.01% {
+    -moz-transform: scale(0.6) rotate(270deg);
+  }
+  87.5% {
+    -moz-transform: scale(0.6) rotate(270deg);
+  }
+  87.51% {
+    -moz-transform: scale(0.6) rotate(315deg);
+  }
+  100% {
+    -moz-transform: scale(0.6) rotate(315deg);
+  }
+}
+/* Each circle */
+div.vjs-loading-spinner .ball1 {
+  opacity: 0.12;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border: 1px solid #ccc;
+}
+div.vjs-loading-spinner .ball2 {
+  opacity: 0.25;
+  position: absolute;
+  left: 34px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border: 1px solid #ccc;
+}
+div.vjs-loading-spinner .ball3 {
+  opacity: 0.37;
+  position: absolute;
+  left: 40px;
+  top: 20px;
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border: 1px solid #ccc;
+}
+div.vjs-loading-spinner .ball4 {
+  opacity: 0.50;
+  position: absolute;
+  left: 34px;
+  top: 34px;
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 15px;
+  border: 1px solid #ccc;
+}
+div.vjs-loading-spinner .ball5 {
+  opacity: 0.62;
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border: 1px solid #ccc;
+}
+div.vjs-loading-spinner .ball6 {
+  opacity: 0.75;
+  position: absolute;
+  left: 6px;
+  top: 34px;
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border: 1px solid #ccc;
+}
+div.vjs-loading-spinner .ball7 {
+  opacity: 0.87;
+  position: absolute;
+  left: 0px;
+  top: 20px;
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border: 1px solid #ccc;
+}
+div.vjs-loading-spinner .ball8 {
+  opacity: 1.00;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border: 1px solid #ccc;
+}
+/* Menu Buttons (Captions/Subtitles/etc.)
+-------------------------------------------------------------------------------- */
+.vjs-default-skin .vjs-menu-button {
+  float: right;
+  margin: 0.2em 0.5em 0 0;
+  padding: 0;
+  width: 3em;
+  height: 2em;
+  cursor: pointer !important;
+  border: 1px solid #111;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-radius: 0.3em;
+  background: #4d4d4d;
+  background: -moz-linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4d4d4d), color-stop(50%, #3f3f3f), color-stop(50%, #333333), color-stop(100%, #252525));
+  background: -webkit-linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+  background: -o-linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+  background: -ms-linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+  background: linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+}
+/* Button Icon */
+.vjs-default-skin .vjs-menu-button div {
+  background: url('video-js.png') 0px -75px no-repeat;
+  width: 16px;
+  height: 16px;
+  margin: 0.2em auto 0;
+  padding: 0;
+}
+/* Button Pop-up Menu */
+.vjs-default-skin .vjs-menu-button ul {
+  display: none;
+  /* Start hidden. Hover will show. */
+
+  opacity: 0.8;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 10em;
+  bottom: 2em;
+  max-height: 15em;
+  left: -3.5em;
+  /* Width of menu - width of button / 2 */
+
+  background-color: #111;
+  border: 2px solid #333;
+  -moz-border-radius: 0.7em;
+  -webkit-border-radius: 1em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 2px 4px 0 #000;
+  -moz-box-shadow: 0 2px 4px 0 #000;
+  box-shadow: 0 2px 4px 0 #000;
+  overflow: auto;
+}
+.vjs-default-skin .vjs-menu-button:focus ul,
+.vjs-default-skin .vjs-menu-button:hover ul {
+  display: block;
+  list-style: none;
+}
+.vjs-default-skin .vjs-menu-button ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0.3em 0 0.3em 20px;
+  line-height: 1.4em;
+  font-size: 1.2em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: left;
+}
+.vjs-default-skin .vjs-menu-button ul li.vjs-selected {
+  text-decoration: underline;
+  background: url('video-js.png') -125px -50px no-repeat;
+}
+.vjs-default-skin .vjs-menu-button ul li:focus,
+.vjs-default-skin .vjs-menu-button ul li:hover,
+.vjs-default-skin .vjs-menu-button ul li.vjs-selected:focus,
+.vjs-default-skin .vjs-menu-button ul li.vjs-selected:hover {
+  background-color: #ccc;
+  color: #111;
+  outline: 0;
+}
+.vjs-default-skin .vjs-menu-button ul li.vjs-menu-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 2em;
+  padding: 0;
+  margin: 0 0 0.3em 0;
+  color: #fff;
+  font-weight: bold;
+  cursor: default;
+  background: #4d4d4d;
+  background: -moz-linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4d4d4d), color-stop(50%, #3f3f3f), color-stop(50%, #333333), color-stop(100%, #252525));
+  background: -webkit-linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+  background: -o-linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+  background: -ms-linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+  background: linear-gradient(top, #4d4d4d 0%, #3f3f3f 50%, #333333 50%, #252525 100%);
+}
+/* Subtitles Button */
+.vjs-default-skin .vjs-captions-button div {
+  background-position: -25px -75px;
+}
+.vjs-default-skin .vjs-chapters-button div {
+  background-position: -100px -75px;
+}
+.vjs-default-skin .vjs-chapters-button ul {
+  width: 20em;
+  left: -8.5em;
+  /* Width of menu - width of button / 2 */
+}
